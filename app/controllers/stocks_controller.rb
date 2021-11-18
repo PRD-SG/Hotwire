@@ -15,7 +15,11 @@ class StocksController < ApplicationController
 
   def create
     @stock = Stock.new(stock_params)
-    @stock.save if redirect_to @stock
+    if @stock.save
+      redirect_to @stock
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -24,7 +28,11 @@ class StocksController < ApplicationController
 
   def update
     @stock = Stock.find(params[:id])
-    redirect_to @stock if  @stock.update(stock_params)
+    if @stock.update(stock_params)
+      redirect_to @stock
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy

@@ -1,24 +1,22 @@
-<%= form_with model: stock do |form| %>
+<%= form_with model: stock do |form| %> <%
+stock.errors.full_messages_for(:qty).each do |message| %>
+<div class="alert alert-primary"><%= message %></div>
+<% stock.errors.full_messages_for(:name).each do |message| %>
+<div class="alert alert-primary"><%= message %></div>
+<% end %> <% end %>
 <div class="input-group _form">
   <%= form.label :name , class: "input-group-text" %><br />
-  <%= form.text_field :name , class: "form-control", placeholder: "Name Product"
-  %>
+  <%= form.text_field :name , class: "form-control", placeholder: "Name
+  Product"%>
 </div>
 <div class="input-group _form">
   <%= form.label :qty , class: "input-group-text " %><br />
-  <%= form.number_field :qty , class: "form-control" , placeholder: "Qty
-  Product"%><br />
+  <%= form.number_field :qty , class: "form-control" , placeholder:
+  "QtyProduct"%><br />
 </div>
-<div class="input-group _form d-flex justify-content-end " ><%= form.submit class: "btn btn-secondary" %></div>
-<% end %>
+<div class="input-group _form d-flex justify-content-between">
+  <div><%= link_to "Back", root_path ,class: "btn btn-secondary"%></div>
+  <div><%= form.submit class: "btn btn-secondary" %></div>
+</div>
 
-<!-- <div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon1">name</span>
-  <input
-    type="text"
-    class="form-control"
-    placeholder="Username"
-    aria-label="Username"
-    aria-describedby="basic-addon1"
-  />
-</div> -->
+<% end %>
