@@ -1,2 +1,26 @@
 <h1>Stocks#index</h1>
-<p>Find me in app/views/stocks/index.html.erb</p>
+<%= link_to "New Stock", new_stock_path %>
+<table border="1" width="700">
+  <tr>
+    <td>ID</td>
+    <td>NAME</td>
+    <td>Qty</td>
+    <td>SHOW</td>
+    <td>EDIT</td>
+    <td>DELETE</td>
+  </tr>
+
+  <% @stock.each do |item| %>
+  <tr>
+    <td><%= item.id %></td>
+    <td><%= item.name %></td>
+    <td><%= item.qty %></td>
+    <td><%= link_to "Show", item %></td>
+    <td><%= link_to "Edit", edit_stock_path(item) %></td>
+    <td>
+      <%= link_to "Destroy", stock_path(item), method: :delete, data: {
+      confirm: "Are you sure?" } %>
+    </td>
+  </tr>
+  <%end%>
+</table>

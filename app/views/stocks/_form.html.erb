@@ -1,0 +1,10 @@
+<%= form_with model: stock do |form| %>
+<div>
+  <%= form.label :name %><br />
+  <%= form.text_field :name %> 
+  <%= form.label :qty %><br />
+  <%= form.number_field :qty %><br />
+
+</div>
+<div><%= form.submit %></div>
+<% end %>
