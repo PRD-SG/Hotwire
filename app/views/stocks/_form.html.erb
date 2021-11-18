@@ -1,10 +1,24 @@
 <%= form_with model: stock do |form| %>
-<div>
-  <%= form.label :name %><br />
-  <%= form.text_field :name %> 
-  <%= form.label :qty %><br />
-  <%= form.number_field :qty %><br />
-
+<div class="input-group _form">
+  <%= form.label :name , class: "input-group-text" %><br />
+  <%= form.text_field :name , class: "form-control", placeholder: "Name Product"
+  %>
 </div>
-<div><%= form.submit %></div>
+<div class="input-group _form">
+  <%= form.label :qty , class: "input-group-text " %><br />
+  <%= form.number_field :qty , class: "form-control" , placeholder: "Qty
+  Product"%><br />
+</div>
+<div class="input-group _form d-flex justify-content-end " ><%= form.submit class: "btn btn-secondary" %></div>
 <% end %>
+
+<!-- <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">name</span>
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Username"
+    aria-label="Username"
+    aria-describedby="basic-addon1"
+  />
+</div> -->

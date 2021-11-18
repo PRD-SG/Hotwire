@@ -1,28 +1,53 @@
-<h1>Stocks#index</h1>
-<%= link_to "New Stock", new_stock_path %>
-<table border="1" width="700">
-  <tr>
-    <td>ID</td>
-    <td>NAME</td>
-    <td>Qty</td>
-    <td>SHOW</td>
-    <td>EDIT</td>
-    <td>DELETE</td>
-  </tr>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="title d-flex justify-content-center align-items-center">
+        Stocks#index
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="create d-flex justify-content-center align-items-center">
+        <%= link_to 'New Stock', new_stock_path, class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-center align-items-center">
+        <table class="table table-striped">
+          <thead class="table-hover">
+            <td>ID</td>
+            <td>NAME</td>
+            <td>Qty</td>
+            <td>SHOW</td>
+            <td>EDIT</td>
+            <td>DELETE</td>
+          </thead>
 
-  <% @stock.each do |item| %>
-  <tr>
-    <td><%= item.id %></td>
-    <td><%= item.name %></td>
-    <td><%= item.qty %></td>
-    <td><%= link_to "Show", item %></td>
-    <td><%= link_to "Edit", edit_stock_path(item) %></td>
-    <td>
-      <%= link_to "Destroy", stock_path(item), method: :delete, data: {
-      confirm: "Are you sure?" } %>
-    </td>
-  </tr>
-  <%end%>
-</table>
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-
+          <% @stock.each do |item| %>
+          <tr>
+            <td><%= item.id %></td>
+            <td><%= item.name %></td>
+            <td><%= item.qty %></td>
+            <td>
+              <%= link_to 'Show', item, class: "btn btn-outline-primary btn-sm"
+              %>
+            </td>
+            <td>
+              <%= link_to 'Edit', edit_stock_path(item), class: "btn
+              btn-outline-dark btn-sm" %>
+            </td>
+            <td>
+              <%= link_to 'Delete', stock_path(item), class: "btn
+              btn-outline-danger btn-sm", method: :delete, data: { confirm: "Are
+              you sure?" } %>
+            </td>
+          </tr>
+          <%end%>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

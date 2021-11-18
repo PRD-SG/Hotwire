@@ -1,3 +1,62 @@
-<h1>Stocks#Show</h1>
-<%= @stock.id %> <%= @stock.name %>
-<%= link_to "Back", root_path %>
+<div class="container">
+  <div class="row">
+    <div class="col title d-flex justify-content-center align-items-center">
+      Stocks#Show
+    </div>
+  </div>
+  <div class="show-content">
+    <div class="row">
+      <div class="col d-flex justify-content-center align-items-center">
+        <div class="show input-group">
+          <span class="input-group-text">ID</span>
+          <div class="form-control"><%= @stock.id %></div>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-center align-items-center">
+        <div class="show input-group">
+          <span class="input-group-text">NAME</span>
+          <div class="form-control"><%= @stock.name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex justify-content-center align-items-center">
+        <div class="show input-group">
+          <span class="input-group-text">CREATED</span>
+          <div class="form-control">
+            <%= @stock.created_at.strftime("%y-%b-%d %H:%M:%S") %>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-center align-items-center">
+        <div class="show input-group">
+          <span class="input-group-text">UPDATED</span>
+          <div class="form-control">
+            <%= @stock.updated_at.strftime("%y-%b-%d %H:%M:%S") %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex justify-content-center align-items-center">
+        <div class="show input-group">
+          <span class="input-group-text">CREATED AGO</span>
+          <div class="form-control">
+            <%= time_ago_in_words(@stock.created_at) %>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-center align-items-center">
+        <div class="show input-group">
+          <span class="input-group-text">UPDATED AGO</span>
+          <div class="form-control">
+            <%= time_ago_in_words(@stock.updated_at) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="_form d-flex justify-content-center">
+      <%= link_to "Back", root_path ,class: "btn btn-secondary"%>
+    </div>
+  </div>
+</div>
