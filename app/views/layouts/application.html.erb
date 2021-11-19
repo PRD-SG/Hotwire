@@ -17,14 +17,18 @@
   </head>
 
   <body>
+    <% unless current_page?(new_user_session_path) %>
     <nav class="navbar fixed-top navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="<%= root_path%>">Stock</a>
         <div class="d-flex">
-          <%= link_to 'Sign out', destroy_user_session_path , method: :delete , class: 'btn btn-outline-danger'%>
+          <%= link_to 'Sign out', destroy_user_session_path , method: :delete ,
+          class: 'btn btn-outline-danger'%>
         </div>
       </div>
     </nav>
+    <% end %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
