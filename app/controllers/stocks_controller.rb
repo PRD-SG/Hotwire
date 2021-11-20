@@ -2,7 +2,9 @@ class StocksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @stock = Stock.all
+    @q = Stock.ransack(params[:q])
+    @stock = @q.result(distinct: true)
+    # @stock = Stock.search(params[:search].downcase)
   end
 
   def show

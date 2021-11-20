@@ -1,16 +1,27 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <div class="title d-flex justify-content-center align-items-center">
-        Stocks#index
+      <div class="title d-flex justify-content-center align-items-center shadow p-3 mb-3 mt-3 rounded">
+        Stocks
+      </div> 
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="create d-flex justify-content-center align-items-center">
+        <%= link_to '<span class="material-icons">note_add</span>'.html_safe, new_stock_path, class: "btn btn-success btn-sm" %>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col">
       <div class="create d-flex justify-content-center align-items-center">
-        <%= link_to 'New Stock', new_stock_path, class: "btn btn-success" %>
-      </div>
+        <div class="input-group mb-3 justify-content-center align-items-center">
+          <%= search_form_for @q do |f| %> 
+          <%= f.search_field:name_cont ,placeholder: 'Search stock...', class: 'form-control'%> 
+        <%end%>
+        </div>
     </div>
   </div>
   <div class="row">
@@ -18,37 +29,36 @@
       <div class="d-flex justify-content-center align-items-center">
         <table class="table table-striped">
           <thead class="table-hover">
-            <td>ID</td>
-            <td>NAME</td>
-            <td>Qty</td>
-            <td>SHOW</td>
-            <td>EDIT</td>
-            <td>DELETE</td>
+            <td>No</td>
+            <td><%= sort_link(@q, :name)  %></td>
+            <td><%= sort_link(@q, :qty)  %></td>
+            <td>Show</td>
+            <td>Edit</td>
+            <td>Delete</td>
           </thead>
-
-          <% @stock.each do |item| %>
+          <% i = 1%> <% @stock.each do |item| %>
           <tr>
-            <td><%= item.id %></td>
-            <td><%= item.name %></td>
+            <td><%= i %></td>
+            <td><span style="float:left;"><%= item.name %></span></td>
             <td><%= item.qty %></td>
             <td>
-              <%= link_to 'Show', item, class: "btn btn-outline-primary btn-sm"
-              %>
+              <%= link_to '<span class="material-icons ">find_in_page</span>'.html_safe, item, class: "btn btn-outline-dark btn-sm"%>
+
             </td>
             <td>
-              <%= link_to 'Edit', edit_stock_path(item), class: "btn
-              btn-outline-dark btn-sm" %>
+              <%= link_to '<span class="material-icons ">edit</span>'.html_safe, edit_stock_path(item), class: "btn btn-outline-dark btn-sm"%>
             </td>
             <td>
-              <%= link_to 'Delete', stock_path(item), class: "btn
+              <%= link_to  '<span class="material-icons ">delete</span>'.html_safe, stock_path(item), class: "btn
               btn-outline-danger btn-sm", method: :delete, data: { confirm: "Are
               you sure?" } %>
             </td>
           </tr>
-          <%end%>
+          <%i+=1 end%>
         </table>
       </div>
     </div>
   </div>
 </div>
 <!-- <%= link_to 'Sign out', destroy_user_session_path, class: "btn btn-outline-danger"%> -->
+

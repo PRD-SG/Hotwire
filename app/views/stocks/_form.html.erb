@@ -15,8 +15,8 @@ stock.errors.full_messages_for(:qty).each do |message| %>
   "QtyProduct"%><br />
 </div>
 <div class="input-group _form d-flex justify-content-between">
-  <div><%= link_to "Back", root_path ,class: "btn btn-secondary"%></div>
-  <div><%= form.submit class: "btn btn-secondary" %></div>
+  <div><%= link_to '<span class="material-icons">reply </span>'.html_safe, root_path ,class: "btn  btn-outline-dark btn-sm"%></div>
+  <div><%= form.submit  class: "btn  btn-outline-dark  " %></div>
 </div>
 
 <% end %>
