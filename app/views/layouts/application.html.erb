@@ -17,15 +17,16 @@
 rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
   </head>
-
   <body>
     <% if user_signed_in? %>
     <nav class="navbar fixed-top navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="<%= root_path%>">Stock</a>
         <div class="d-flex">
+          <%= link_to '<span class="material-icons ">settings</span>'.html_safe, edit_user_registration_path , method: :get ,
+          class: 'btn btn-outline-primary btn-sm d-flex justify-content-center btn-nav'%>
           <%= link_to '<span class="material-icons ">logout</span>'.html_safe, destroy_user_session_path , method: :delete ,
-          class: 'btn btn-outline-danger btn-sm'%>
+          class: 'btn btn-outline-danger btn-sm d-flex justify-content-center btn-nav'%>
         </div>
       </div>
     </nav>

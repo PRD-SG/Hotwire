@@ -1,10 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col title d-flex justify-content-center align-items-center shadow bg-body p-3 mb-3 mt-3 rounded">
+    <div
+      class="col title d-flex justify-content-center align-items-center shadow bg-body p-3 mb-3 mt-3 rounded
+      "
+    >
       Stocks#Show
     </div>
   </div>
-  <div class="show-content ">
+  <div class="show-content">
+    <div class="row">
+      <div class="col d-flex justify-content-center align-items-center">
+          <div class="show input-group">
+            <span class="input-group-text">NAME</span>
+            <div class="form-control"><%= @stock.name %></div>
+          </div>
+    </div>
     <div class="row">
       <div class="col d-flex justify-content-center align-items-center">
         <div class="show input-group">
@@ -18,19 +28,13 @@
           <div class="form-control"><%= @stock.qty %></div>
         </div>
       </div>
-      <div class="col d-flex justify-content-center align-items-center">
-        <div class="show input-group">
-          <span class="input-group-text">NAME</span>
-          <div class="form-control"><%= @stock.name %></div>
-        </div>
-      </div>
     </div>
     <div class="row">
       <div class="col d-flex justify-content-center align-items-center">
         <div class="show input-group">
           <span class="input-group-text">CREATED</span>
           <div class="form-control">
-            <%= @stock.created_at.strftime("%y-%b-%d %H:%M:%S") %>
+            <%= @stock.created_at.strftime("%y-%b-%d") %>
           </div>
         </div>
       </div>
@@ -38,7 +42,7 @@
         <div class="show input-group">
           <span class="input-group-text">UPDATED</span>
           <div class="form-control">
-            <%= @stock.updated_at.strftime("%y-%b-%d %H:%M:%S") %>
+            <%= @stock.updated_at.strftime("%y-%b-%d") %>
           </div>
         </div>
       </div>
@@ -62,7 +66,7 @@
       </div>
     </div>
     <div class="_form d-flex justify-content-center">
-      <%= link_to "Back", root_path ,class: "btn btn-secondary"%>
+      <%= link_to '<span class="material-icons">arrow_back</span>'.html_safe, root_path ,class: "btn btn-outline-dark btn-sm d-flex justify-content-center "%>
     </div>
   </div>
 </div>

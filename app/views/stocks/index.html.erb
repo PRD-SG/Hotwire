@@ -4,13 +4,12 @@
       <div class="title d-flex justify-content-center align-items-center shadow p-3 mb-3 mt-3 rounded">
         Stocks
       </div> 
-      
     </div>
   </div>
   <div class="row">
     <div class="col">
       <div class="create d-flex justify-content-center align-items-center">
-        <%= link_to '<span class="material-icons">note_add</span>'.html_safe, new_stock_path, class: "btn btn-success btn-sm" %>
+        <%= link_to '<span class="material-icons">post_add</span>'.html_safe, new_stock_path, class: "btn btn-success btn-sm d-flex justify-content-center" %>
       </div>
     </div>
   </div>
@@ -24,8 +23,8 @@
         </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
+  <div class="row ">
+    <div class="col ">
       <div class="d-flex justify-content-center align-items-center">
         <table class="table table-striped">
           <thead class="table-hover">
@@ -39,18 +38,17 @@
           <% i = 1%> <% @stock.each do |item| %>
           <tr>
             <td><%= i %></td>
-            <td><span style="float:left;"><%= item.name %></span></td>
+            <td><%= item.name %></td>
             <td><%= item.qty %></td>
             <td>
-              <%= link_to '<span class="material-icons ">find_in_page</span>'.html_safe, item, class: "btn btn-outline-dark btn-sm"%>
+              <%= link_to '<span class="material-icons ">find_in_page</span>'.html_safe, item, class: "btn btn-outline-dark btn-sm d-flex justify-content-center"%>
 
             </td>
             <td>
-              <%= link_to '<span class="material-icons ">edit</span>'.html_safe, edit_stock_path(item), class: "btn btn-outline-dark btn-sm"%>
+              <%= link_to '<span class="material-icons ">edit</span>'.html_safe, edit_stock_path(item), class: "btn btn-outline-dark btn-sm d-flex justify-content-center"%>
             </td>
             <td>
-              <%= link_to  '<span class="material-icons ">delete</span>'.html_safe, stock_path(item), class: "btn
-              btn-outline-danger btn-sm", method: :delete, data: { confirm: "Are
+              <%= link_to  '<span class="material-icons ">delete</span>'.html_safe, stock_path(item), class: "btn btn-outline-danger btn-sm d-flex justify-content-center", method: :delete, data: { confirm: "Are
               you sure?" } %>
             </td>
           </tr>

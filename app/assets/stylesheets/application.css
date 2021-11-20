@@ -27,8 +27,7 @@ a {
   font-weight: bold;
 }
 .table {
-  text-align: center;
-  width: 70%;
+  width: 80%;
 }
 html,
 body {
@@ -40,9 +39,9 @@ body {
   font-weight: bold;
   color: black;
   border-radius: 5px;
-  height: 60px;
+  height: 100px;
   font-size: 20px;
-  max-width: 50%;
+  max-width: 80%;
   /* border-right: 6px solid rgb(41, 41, 41); */
   background-color: #fad02c;
   margin: 0 auto;
@@ -56,7 +55,7 @@ body {
 }
 
 .show {
-  width: 60%;
+  width: 80%;
   padding-top: 20px;
 }
 .show-content {
@@ -64,21 +63,46 @@ body {
   margin: 0 auto;
   margin-top: 20px;
   border-radius: 5px;
-  background-color: rgb(211, 209, 209);
+  background-color: #fad02c;
   padding-bottom: 20px;
 }
 .input {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   padding-top: 5px;
   padding-bottom: 5px;
 }
+.submit {
+  width: 100%;
+}
 .input_text {
+  width: 80%;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
-  background-color: rgb(65, 33, 43);
+  background-color: #fad02c;
   border-radius: 5px;
   height: 60px;
+  margin: 0 auto;
+}
+.col,.row {
+  margin: 0 auto;
+}
+.btn-nav {
+  margin-left: 5px;
+}
+.title_text_edit{
+  width: 70%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
   color: white;
+  background-color: #fa662c;
+  border-radius: 5px;
+  height: 50px;
+  margin: 0 auto;
+}
+.can_account{
+  padding-top: 20px;
+  
 }
