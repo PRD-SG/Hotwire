@@ -1,7 +1,9 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="input input_text d-flex justify-content-center align-items-center">Change your password</div>
+  <div class="row g-3">
+    <div class="col-md-12">
+      <div class="title_page d-flex justify-content-center align-items-center">
+        Change your password
+      </div>
     </div>
   </div>
 
@@ -9,46 +11,39 @@
   <%= render "users/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="row">
-    <div class="col input">
-      <div class="field input-group input">
-    <%= f.label :password, "New password" ,class: "input-group-text" %><br />
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class:"form-control" %>
-  </div>
+  <div class="row g-3">
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="col-md-6">
+        <%= f.label :password, "New password" ,class: "form-label mt-2" %><br />
+      <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class:"form-control" %>
+      </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col input">
-      <div class="field input-group input">
-    <%= f.label :password_confirmation, "Confirm new password",class: "input-group-text" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control"%>
-  </div>
-    </div></div>
-
- <div class="row">
-    <div class="col">
-      <div class="actions input">
-        <%= f.submit "Change my password" ,class: "btn
-        btn-outline-dark submit" %>
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="col-md-6">
+        <%= f.label :password_confirmation, "Confirm new password",class: "form-label mt-2" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control"%>
+      </div>
+    </div>
+    <div class="col-md-12 d-flex justify-content-center">
+        <div class="actions">
+          <%= f.submit "Change my password" ,class: "btn
+          btn-outline-dark submit" %>
       </div>
     </div>
   </div>
 <% end %>
-<div class="row">
-  <div class="col">
-    <div class="actions input d-flex justify-content-end">
-      <%= link_to "Log in", new_session_path(resource_name),class: "btn btn-outline-dark btn-sm" %><br />
+<div class="row g-3 d-flex justify-content-center">
+  <div class="col-md-6">
+    <div class="col-md-12 d-flex justify-content-end">
+      <div class="actions">
+        <%= link_to "Sign in", new_session_path(resource_name),class: "btn btn-outline-secondary btn-sm mt-2 mb-2"%><br />
+      </div>
+  </div>
+  <div class="col-md-12 d-flex justify-content-end">
+    <div class="actions">
+      <%= link_to "Sign up", new_registration_path(resource_name),class: "btn btn-outline-secondary btn-sm mt-2 mb-2"%><br />
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col">
-    <div class="actions input d-flex justify-content-end">
-      <%= link_to "Sign up", new_registration_path(resource_name) ,class: "btn btn-outline-dark btn-sm"%><br />
-    </div>
-  </div>
-</div>
 </div>
 
 

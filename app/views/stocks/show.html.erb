@@ -1,69 +1,63 @@
 <div class="container">
-  <div class="row">
-    <div class="col title d-flex justify-content-center align-items-center shadow p-3 mb-3 mt-3 rounded">
+  <div class="row g-3">
+    <div class="col-md-12 title_page d-flex justify-content-center align-items-center shadow  p-3 mb-3 mt-3 rounded">
       Stocks#Show
     </div>
   </div>
-  <div class="show-content">
-    <div class="row">
-      <div class="col d-flex justify-content-center align-items-center">
-          <div class="show input-group">
-            <span class="input-group-text">NAME</span>
-            <div class="form-control"><%= @stock.name %></div>
-          </div>
+  <div class="row g-3">
+    <div class="col-md-12 d-flex justify-content-center align-items-center">
+      <div class="col-md-6">
+        <label class="form-label">NAME</label>
+        <div class="form-control"><%= @stock.name %></div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col d-flex justify-content-center align-items-center">
-        <div class="show input-group">
-          <span class="input-group-text">ID</span>
+    <div class="col-md-12 d-flex justify-content-center align-items-center">
+      <div class="col-md-6 d-flex justify-content-between">
+        <div class="col-md-5">
+          <label class="form-label">ID</label>
           <div class="form-control"><%= @stock.id %></div>
         </div>
-      </div>
-      <div class="col d-flex justify-content-center align-items-center">
-        <div class="show input-group">
-          <span class="input-group-text">QTY</span>
-          <div class="form-control"><%= @stock.qty %></div>
+        <div class="col-md-5">
+          <label class="form-label">QTY</label>
+          <div class="form-control"><%= @stock.qty%></div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col d-flex justify-content-center align-items-center">
-        <div class="show input-group">
-          <span class="input-group-text">CREATED</span>
+    <div class="col-md-12 d-flex justify-content-center align-items-center">
+      <div class="col-md-6 d-flex justify-content-between">
+        <div class="col-md-5">
+          <label class="form-label">CREATED</label>
           <div class="form-control">
             <%= @stock.created_at.strftime("%y-%b-%d") %>
           </div>
         </div>
-      </div>
-      <div class="col d-flex justify-content-center align-items-center">
-        <div class="show input-group">
-          <span class="input-group-text">UPDATED</span>
+        <div class="col-md-5">
+          <label class="form-label">UPDATED</label>
           <div class="form-control">
             <%= @stock.updated_at.strftime("%y-%b-%d") %>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col d-flex justify-content-center align-items-center">
-        <div class="show input-group">
-          <span class="input-group-text">CREATED AGO</span>
+    <div class="col-md-12 d-flex justify-content-center align-items-center">
+      <div class="col-md-6 d-flex justify-content-between">
+        <div class="col-md-5">
+          <label class="form-label">CREATED AGO</label>
           <div class="form-control">
             <%= time_ago_in_words(@stock.created_at) %>
           </div>
         </div>
-      </div>
-      <div class="col d-flex justify-content-center align-items-center">
-        <div class="show input-group">
-          <span class="input-group-text">UPDATED AGO</span>
+        <div class="col-md-5">
+          <label class="form-label">UPDATED AGO</label>
           <div class="form-control">
             <%= time_ago_in_words(@stock.updated_at) %>
           </div>
         </div>
       </div>
     </div>
-    <div class="_form d-flex justify-content-center">
-      <%= link_to '<span class="material-icons">arrow_back</span>'.html_safe, root_path ,class: "btn btn-outline-dark d-flex justify-content-center "%>
+    <div class="col-md-12 d-flex justify-content-center">
+      <%= link_to '<span class="material-icons">arrow_back</span
+      >'.html_safe,root_path ,class: "btn btn-outline-dark btn-sm"%>
     </div>
   </div>
 </div>

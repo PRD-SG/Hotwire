@@ -1,30 +1,24 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="title d-flex justify-content-center align-items-center shadow p-3 mb-3 mt-3 rounded">
+  <div class="row g-3">
+      <div class="col-md-12 title_page d-flex justify-content-center align-items-center shadow mb-3 mt-3 rounded">
         Stocks
-      </div> 
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <div class="create d-flex justify-content-center align-items-center">
-        <%= link_to '<span class="material-icons">post_add</span>'.html_safe, new_stock_path, class: "btn btn-success btn-sm d-flex justify-content-center" %>
+  <div class="row g-3">
+    <div class="col-md-12">
+      <div class="d-flex justify-content-center align-items-center">
+        <%= link_to '<span class="material-icons">post_add</span>'.html_safe, new_stock_path, class: "btn btn-success d-flex justify-content-center mb-2" %>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <div class="create d-flex justify-content-center align-items-center">
-        <div class="input-group mb-3 justify-content-center align-items-center">
+  
+    <div class="col-md-12">
+        <div class="input-group justify-content-center align-items-center">
           <%= search_form_for @q do |f| %> 
-          <%= f.search_field:name_cont ,placeholder: 'Search stock...', class: 'form-control'%> 
+          <%= f.search_field:name_cont ,placeholder: 'Search stock...', class: 'form-control '%> 
         <%end%>
-        </div>
+      </div>
     </div>
-  </div>
-  <div class="row ">
-    <div class="col ">
+    <div class="col-md-12">
       <div class="d-flex justify-content-center align-items-center">
         <table class="table table-striped ">
           <thead class="table-hover">
