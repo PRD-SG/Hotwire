@@ -59,11 +59,11 @@ body {
   padding-top: 20px;
 }
 .show-content {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   margin-top: 20px;
   border-radius: 5px;
-  background-color: #fad02c;
+  background-color: #cccccb;
   padding-bottom: 20px;
 }
 .input {
@@ -71,9 +71,6 @@ body {
   margin: 0 auto;
   padding-top: 5px;
   padding-bottom: 5px;
-}
-.submit {
-  width: 100%;
 }
 .input_text {
   width: 80%;
@@ -102,7 +99,21 @@ body {
   height: 50px;
   margin: 0 auto;
 }
-.can_account{
-  padding-top: 20px;
-  
+
+.btn_table{
+  max-width: 50%;
 }
+.title_page{
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+  background-color: #fad02c;
+  border-radius : 10px;
+  font-weight: bold;
+  font-size: 25px;
+  border-bottom: 5px solid rgb(66, 66, 66);
+
+}
+/* div {
+  border-style: groove;
+} */
