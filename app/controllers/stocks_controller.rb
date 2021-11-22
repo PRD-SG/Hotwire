@@ -1,6 +1,6 @@
 class StocksController < ApplicationController
   before_action :authenticate_user!
-
+  load_and_authorize_resource
   def index
     @q = Stock.ransack(params[:q])
     @stock = @q.result(distinct: true)
@@ -17,6 +17,7 @@ class StocksController < ApplicationController
 
   def create
     @stock = Stock.new(stock_params)
+    @stock.user = current_user
     if @stock.save
       redirect_to @stock
     else

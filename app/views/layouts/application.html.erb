@@ -26,6 +26,8 @@ rel="stylesheet">
       <div class="container-fluid">
         <a class="navbar-brand" href="<%= root_path%>">Stock</a>
         <div class="d-flex">
+          <%= link_to current_user.email, edit_user_registration_path , method: :get ,
+          class: 'btn btn-outline-light btn-sm d-flex justify-content-center btn-nav'%>
           <%= link_to '<span class="material-icons ">settings</span>'.html_safe, edit_user_registration_path , method: :get ,
           class: 'btn btn-outline-primary btn-sm d-flex justify-content-center btn-nav'%>
           <%= link_to '<span class="material-icons ">logout</span>'.html_safe, destroy_user_session_path , method: :delete ,
