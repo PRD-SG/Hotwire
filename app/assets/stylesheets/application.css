@@ -25,6 +25,7 @@ a {
 
 .table-hover {
   font-weight: bold;
+  margin: 0 auto;
 }
 .table {
   width: 80%;
@@ -34,19 +35,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Bai Jamjuree", sans-serif;
-}
-
-.show {
-  width: 80%;
-  padding-top: 20px;
-}
-.show-content {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 20px;
-  border-radius: 5px;
-  background-color: #cccccb;
-  padding-bottom: 20px;
 }
 
 .btn-nav {
@@ -69,3 +57,6 @@ body {
 /* div {
   border-style: groove;
 } */
+.table_row_center {
+  text-align: center;
+}

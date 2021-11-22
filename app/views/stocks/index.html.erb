@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="row g-3">
-    <div class="col-md-12">
+    <div class="col-md-12 ">
       <div class="d-flex justify-content-center align-items-center">
         <%= link_to '<span class="material-icons">post_add</span>'.html_safe, new_stock_path, class: "btn btn-success d-flex justify-content-center mb-2" %>
       </div>
@@ -19,30 +19,49 @@
       </div>
     </div>
     <div class="col-md-12 d-flex justify-content-center align-items-center">
-
         <table class="table table-striped ">
           <thead class="table-hover">
-            <td>No</td>
+            <td class="table_row_center">No</td>
             <td><%= sort_link(@q, :name)  %></td>
-            <td><%= sort_link(@q, :qty)  %></td>
-            <td>Show</td>
-            <td>Edit</td>
-            <td>Delete</td>
+            <td class="table_row_center"><%= sort_link(@q, :qty)  %></td>
+            <td class="table_row_center">Show</td>
+            <td class="table_row_center">Edit</td>
+            <td class="table_row_center">Delete</td>
           </thead>
           <% i = 1%> <% @stock.each do |item| %>
           <tr>
-            <td><%= i %></td>
+            <td class="table_row_center"><%= i %></td>
             <td><%= item.name %></td>
-            <td><%= item.qty %></td>
-            <td>
+            <td class="table_row_center"><%= item.qty %></td>
+            <td class="table_row_center">
               <%= link_to '<span class="material-icons ">find_in_page</span>'.html_safe, item, class: "btn btn-outline-dark btn-sm "%>
-            </td>
-            <td>
+            </td >
+            <td class="table_row_center">
               <%= link_to '<span class="material-icons ">edit</span>'.html_safe, edit_stock_path(item), class: "btn btn-outline-dark btn-sm "%>
             </td>
-            <td>
-              <%= link_to  '<span class="material-icons ">delete</span>'.html_safe, stock_path(item), class: "btn btn-outline-danger btn-sm ", method: :delete, data: { confirm: "Are
-              you sure?" } %>
+            <td class="table_row_center">
+<!-- Button trigger modal -->
+              <button type="button" class="btn btn-outline-danger btn-sm " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <span class="material-icons ">delete</span>
+              </button>
+<!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      You won't be able to revert this!
+                    </div>
+                    <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <%= link_to  'Delete', stock_path(item), class: "btn btn-danger", method: :delete%>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
           <%i+=1 end%>
@@ -50,5 +69,3 @@
     </div>
   </div>
 </div>
-<!-- <%= link_to 'Sign out', destroy_user_session_path, class: "btn btn-outline-danger"%> -->
-
