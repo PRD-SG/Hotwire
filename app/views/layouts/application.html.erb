@@ -26,6 +26,9 @@ rel="stylesheet">
       <div class="container-fluid">
         <a class="navbar-brand" href="<%= root_path%>">Stock</a>
         <div class="d-flex">
+          <%if current_user.admin? %>
+          <%= link_to "Admin", rails_admin_path , method: :get , class: 'btn btn-outline-light btn-sm d-flex justify-content-center btn-nav'%>
+          <%end%>
           <%= link_to current_user.email, edit_user_registration_path , method: :get ,
           class: 'btn btn-outline-light btn-sm d-flex justify-content-center btn-nav'%>
           <%= link_to '<span class="material-icons ">logout</span>'.html_safe, destroy_user_session_path , method: :delete ,

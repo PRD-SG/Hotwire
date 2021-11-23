@@ -5,23 +5,10 @@
         Edit <%= resource_name.to_s.humanize %>
       </div>
     </div>
-  </div>
-  <%= form_for(resource, as: resource_name,
-  url:registration_path(resource_name), html: { method: :put }) do |f| %>
-  <div class="row g-3">
-    <div class="col-md-12 d-flex justify-content-center align-items-center">
-      <%=render "users/shared/error_messages", resource: resource %>
-    </div>
-  </div>
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-  <div>
-    Currently waiting confirmation for: <%= resource.unconfirmed_email %>
-  </div>
-  <% end %>
-  <div class="row g-3">
-    <div class="col-md-12 d-flex justify-content-center">
+  <%= form_for(resource, as: resource_name, url:registration_path(resource_name), html: { method: :put }) do |f| %>
+    <div class="col-md-12 d-flex justify-content-center mt-2">
       <div class="col-md-6">
-        <%= f.label :email ,class: "form-label mt-2"%><br />
+        <%= f.label :email ,class: "form-label "%><br />
         <%= f.email_field :email, autofocus: true, autocomplete:"email",class:"form-control" %>
       </div>
     </div>
@@ -45,9 +32,14 @@
       </div>
     </div>
   </div>
-  <div class="col-md-12 d-flex justify-content-center align-items-center">
+  <div class="col-md-12 d-flex justify-content-center mt-2 ale">
+    <div class="col-md-6 d-flex justify-content-center">
+      <%= render"users/shared/error_messages", resource: resource %>
+    </div>
+  </div>
+  <div class="col-md-12 d-flex justify-content-center mt-2">
     <div class="actions">
-      <%= f.submit "Update" ,class: "btn btn-outline-dark btn-sm mt-2"%>
+      <%= f.submit "Update" ,class: "btn btn-outline-dark btn-sm"%>
     </div>
   </div>
   <% end %><br />
