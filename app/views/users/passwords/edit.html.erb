@@ -6,11 +6,8 @@
       </div>
     </div>
   </div>
-
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
-
   <div class="row g-3">
     <div class="col-md-12 d-flex justify-content-center">
       <div class="col-md-6">
@@ -22,6 +19,11 @@
       <div class="col-md-6">
         <%= f.label :password_confirmation, "Confirm new password",class: "form-label mt-2" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control"%>
+      </div>
+    </div>
+    <div class="col-md-12 d-flex justify-content-center mt-2 ale">
+      <div class="col-md-6 d-flex justify-content-center">
+        <%= render"users/shared/error_messages", resource: resource %>
       </div>
     </div>
     <div class="col-md-12 d-flex justify-content-center">

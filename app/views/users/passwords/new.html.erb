@@ -7,18 +7,16 @@
     </div>
   </div>
   <div class="row g-3 ">
+      <%= form_for(resource, as: resource_name, url:password_path(resource_name), html: { method: :post }) do |f| %> 
     <div class="col-md-12 d-flex justify-content-center">
       <div class="col-md-6">
-        <div class="col-md-12 d-flex justify-content-center align-items-center">
-          <%= form_for(resource, as: resource_name, url:password_path(resource_name), html: { method: :post }) do |f| %> 
-          <%=render "users/shared/error_messages", resource: resource %>
-        </div>
+        <%= f.label :email , class: "form-label mt-2" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control mt-2" %>
       </div>
     </div>
-    <div class="col-md-12 d-flex justify-content-center">
-      <div class="col-md-6">
-        <%= f.label :email , class: "form-label" %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control mt-2" %>
+    <div class="col-md-12 d-flex justify-content-center mt-2 ale">
+      <div class="col-md-6 d-flex justify-content-center">
+        <%= render"users/shared/error_messages", resource: resource %>
       </div>
     </div>
     <div class="col-md-12 d-flex justify-content-center">

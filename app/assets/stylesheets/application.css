@@ -40,10 +40,6 @@ body {
 .btn-nav {
   margin-left: 5px;
 }
-
-.btn_table{
-  max-width: 50%;
-}
 .title_page{
   margin: 0 auto;
   width: 80%;
@@ -54,9 +50,16 @@ body {
   font-size: 25px;
   border-bottom: 5px solid rgb(66, 66, 66);
 }
-/* div {
-  border-style: groove;
-} */
+
 .table_row_center {
   text-align: center;
+}
+/* div{
+  border-style: groove;
+} */
+
+.ale {
+  color: red;
+  /* position: absolute; */
+  margin: 0 auto;
 }
