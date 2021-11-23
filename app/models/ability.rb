@@ -11,7 +11,7 @@ class Ability
         can :manage, :all
         can :access, :rails_admin
       else
-        can :read, :all
+        can :read, Stock,id: user.id
       end
     
     # The first argument to `can` is the action you are giving the user

@@ -13,11 +13,15 @@
   <div class="col-md-12 d-flex justify-content-center">
     <div class="col-md-4">
       <%= form.label :qty , class: "form-label" %><br />
-      <%= form.number_field :qty , class: "form-control mb-2" , placeholder:"Qty Product"%><br />
+      <%= form.number_field :qty , class: "form-control" , placeholder:"Qty Product"%><br />
     </div>
   </div>
-  <%= form.label :main_image %>
-  <%= form.file_field :main_image %>
+  <div class="col-md-12 d-flex justify-content-center">
+    <div class="col-md-4">
+      <%= form.label :main_image ,class: "form-label" %>
+      <%= form.file_field :main_image , class: "form-control"%>
+    </div>
+  </div>
   <div class="col-md-12 d-flex justify-content-center">
     <div class="col-md-6 d-flex justify-content-evenly">
       <div class="col-md-3 d-flex justify-content-center">

@@ -4,7 +4,6 @@ class StocksController < ApplicationController
   def index
     @q = Stock.ransack(params[:q])
     @stock = @q.result(distinct: true)
-    # @stock = Stock.search(params[:search].downcase)
   end
 
   def show

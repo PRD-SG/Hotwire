@@ -40,26 +40,18 @@
         </div>
     </div>
     <div class="col-md-12 d-flex justify-content-center">
-        <div class="col-md-6">
-          <label class="form-label">CREATED AGO</label>
-          <div class="form-control">
-            <%= time_ago_in_words(@stock.created_at) %>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-12 d-flex justify-content-center">
-        <div class="col-md-6">
-          <label class="form-label">UPDATED AGO</label>
-          <div class="form-control">
-            <%= time_ago_in_words(@stock.updated_at) %>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-12 d-flex justify-content-center">
       <div class="col-md-6">
-        <label class="form-label">CREATED BY</label>
+        <label class="form-label">CREATE BY</label>
         <div class="form-control">
           <%= @stock.user.email %>
+        </div>
+      </div>
+  </div>
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="col-md-6">
+        <label class="form-label">IMAGE</label>
+        <div class="form-control d-flex justify-content-center">
+          <%= image_tag @stock.main_image ,width: "200"%>
         </div>
       </div>
   </div>

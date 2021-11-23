@@ -2,7 +2,6 @@
   <div class="row g-3">
       <div class="col-md-12 title_page d-flex justify-content-center align-items-center shadow p-3 mb-3 mt-3 rounded">
         Stocks
-
     </div>
   </div>
   <div class="row g-3">
@@ -22,12 +21,12 @@
     <div class="col-md-12 d-flex justify-content-center align-items-center">
         <table class="table table-striped ">
           <thead class="table-hover">
-            <td class="table_row_center">No</td>
-            <td><%= sort_link(@q, :name)  %></td>
-            <td class="table_row_center"><%= sort_link(@q, :qty)  %></td>
-            <td class="table_row_center">Show</td>
-            <td class="table_row_center">Edit</td>
-            <td class="table_row_center">Delete</td>
+            <td class="table_row_center col-1">No</td>
+            <td class="table_row_center col-5"><%= sort_link(@q, :name)  %></td>
+            <td class="table_row_center col-1"><%= sort_link(@q, :qty)  %></td>
+            <td class="table_row_center col-1">Show</td>
+            <td class="table_row_center col-1">Edit</td>
+            <td class="table_row_center col-1">Delete</td>
           </thead>
           <% i = 1%> <% @stock.each do |item| %>
           <tr>
