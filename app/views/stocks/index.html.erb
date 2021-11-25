@@ -1,9 +1,11 @@
 <div class="container">
+  
   <div class="row g-3">
       <div class="col-md-12 title_page d-flex justify-content-center align-items-center shadow p-3 mb-3 mt-3 rounded">
         Stocks
     </div>
   </div>
+  
   <div class="row g-3">
     <div class="col-md-12 ">
       <div class="d-flex justify-content-center align-items-center">
@@ -12,12 +14,13 @@
     </div>
   
     <div class="col-md-12">
-        <div class="input-group justify-content-center align-items-center">
-          <%= search_form_for @q do |f| %> 
-          <%= f.search_field:name_cont ,placeholder: 'Search stock...', class: 'form-control '%> 
+      <div class="input-group justify-content-center align-items-center">
+        <%= search_form_for @q do |f| %> 
+        <%= f.search_field:name_cont ,placeholder: 'Search stock...', class: 'form-control '%> 
         <%end%>
       </div>
     </div>
+
     <div class="col-md-12 d-flex justify-content-center align-items-center">
         <table class="table table-striped ">
           <thead class="table-hover">
@@ -28,23 +31,35 @@
             <td class="table_row_center col-1">Edit</td>
             <td class="table_row_center col-1">Delete</td>
           </thead>
-          <% i = 1%> <% @stock.each do |item| %>
+            <% i = 1%> 
+            <% @stock.each do |item| %>
+            <% if can? :read, item%>
           <tr>
             <td class="table_row_center"><%= i %></td>
-            <td><%= item.name %></td>
-            <td class="table_row_center"><%= item.qty %></td>
+              <td><%= item.name %></td>
+            
+              <td class="table_row_center">
+              <%= item.qty %>
+            </td>
+           
             <td class="table_row_center">
+              <% if can? :read, item%>
               <%= link_to '<span class="material-icons ">find_in_page</span>'.html_safe, item, class: "btn btn-outline-dark btn-sm "%>
+              <%end%>
             </td >
+            
             <td class="table_row_center">
+              <% if can? :update, item%>
               <%= link_to '<span class="material-icons ">edit</span>'.html_safe, edit_stock_path(item), class: "btn btn-outline-dark btn-sm "%>
+              <%end%>
             </td>
             <td class="table_row_center">
-<!-- Button trigger modal -->
+              <% if can? :destroy, item%>
+              
               <button type="button" class="btn btn-outline-danger btn-sm " data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <span class="material-icons ">delete</span>
               </button>
-<!-- Modal -->
+              
               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -56,16 +71,19 @@
                       You won't be able to revert this!
                     </div>
                     <div class="modal-footer">
-                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <%= link_to  'Delete', stock_path(item), class: "btn btn-danger", method: :delete%>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancle</button>
+                      <%=link_to  'Yes, delete it!', stock_path(item), class: "btn btn-danger", method: :delete%>
                     </div>
                   </div>
                 </div>
               </div>
+              <%end%>
             </td>
           </tr>
+          <%end%>
           <%i+=1 end%>
         </table>
     </div>
+
   </div>
 </div>

@@ -3,7 +3,7 @@ class StocksController < ApplicationController
   load_and_authorize_resource
   def index
     @q = Stock.ransack(params[:q])
-    @stock = @q.result(distinct: true)
+    @stock = @q.result(distinct: true) 
   end
 
   def show

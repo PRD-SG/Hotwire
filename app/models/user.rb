@@ -10,4 +10,10 @@ class User < ApplicationRecord
   def admin?
     self.has_role? :admin
   end
+  def moderator?
+    self.has_role? :moderator
+  end
+  def anonymous?
+    self.has_role? :anonymous
+  end
 end
