@@ -44,13 +44,13 @@
            
             <td class="table_row_center">
               <% if can? :read, item%>
-              <%= link_to '<span class="material-icons ">find_in_page</span>'.html_safe, item, class: "btn btn-outline-dark btn-sm "%>
+              <%= link_to '<span class="material-icons ">find_in_page</span>'.html_safe, item, class: "btn btn-outline-dark btn-sm"%>
               <%end%>
             </td >
             
             <td class="table_row_center">
               <% if can? :update, item%>
-              <%= link_to '<span class="material-icons ">edit</span>'.html_safe, edit_stock_path(item), class: "btn btn-outline-dark btn-sm "%>
+              <%= link_to '<span class="material-icons ">edit</span>'.html_safe, edit_stock_path(item), class: "btn btn-outline-dark btn-sm"%>
               <%end%>
             </td>
             <td class="table_row_center">
@@ -84,6 +84,5 @@
           <%i+=1 end%>
         </table>
     </div>
-
   </div>
 </div>

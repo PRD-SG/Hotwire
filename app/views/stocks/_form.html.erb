@@ -19,19 +19,18 @@
   <div class="col-md-12 d-flex justify-content-center">
     <div class="col-md-4">
       <%= form.label :main_image ,class: "form-label" %>
-      <%= form.file_field :main_image , class: "form-control"%>
+      <%= form.file_field :main_image ,class: "form-control"%>
     </div>
   </div>
-  <div class="col-md-12 d-flex justify-content-center mt-2">
-    <div class="col-md-6 d-flex justify-content-evenly">
-      <div class="col-md-3 d-flex justify-content-center">
-        <%= link_to '<span class="material-icons">arrow_back</span>'.html_safe,root_path ,class: "btn btn-outline-dark btn-sm d-flexjustify-content-center"%>
-      </div>
-      <div class="col-md-3 d-flex justify-content-center">
-        <%= form.submit class: "btn btn-outline-success " %>
-      </div>
+  <div class="col-md-12 d-flex justify-content-center mt-3">
+    <div class="col-md-4 d-flex justify-content-center ">
+      <%= form.submit class: "btn btn-success btn-w" %>
     </div>
   </div>
-
+  <div class="col-md-12 d-flex justify-content-center mt-2 ">
+    <div class="col-md-4 d-flex justify-content-center btn-w">
+      <%= link_to '<span class="material-icons">arrow_back</span>'.html_safe,root_path ,class: "btn btn-outline-dark  d-flex justify-content-center"%>
+    </div>
+  </div>
 <% end %>
 </div>

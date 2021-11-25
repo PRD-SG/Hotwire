@@ -32,18 +32,14 @@
     </div>
   </div>
     <div class="col-md-12 d-flex justify-content-center mt-2">
-      <div class="actions">
-        <%= f.submit "Sign up" ,class: "btn btn-outline-dark btn-sm mb-2"
-        %>
+      <div class="col-md-6 d-flex justify-content-center">
+        <%= f.submit "Sign up" ,class: "btn btn-dark btn-w" %>
       </div>
     </div>
   <% end %>
-  <div class="row g-3 d-flex justify-content-center">
-    <div class="col-md-6">
-      <div class="actions d-flex justify-content-end">
-        <%= link_to "Log in", new_session_path(resource_name),class: "btn
-        btn-outline-secondary btn-sm" %><br />
-      </div>
+  <div class="col-md-12 d-flex justify-content-center">
+    <div class="col-md-6 d-flex justify-content-end">
+        <%= link_to "Log in", new_session_path(resource_name),class: "btn btn-outline-dark btn-sm" %><br />
     </div>
   </div>
 </div>
