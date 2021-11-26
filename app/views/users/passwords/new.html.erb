@@ -5,12 +5,12 @@
         Forgot your password?
       </div>
     </div>
- 
-      <%= form_for(resource, as: resource_name, url:password_path(resource_name), html: { method: :post }) do |f| %> 
+
+      <%= form_for(resource, as: resource_name, url:password_path(resource_name), html: { method: :post }) do |f| %>
     <div class="col-md-12 d-flex justify-content-center mt-2">
       <div class="col-md-6">
         <%= f.label :email , class: "form-label " %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control mt-2" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control mt-2 border border-dark" %>
       </div>
     </div>
     <div class="col-md-12 d-flex justify-content-center mt-2 ale">

@@ -16,7 +16,7 @@ class StocksController < ApplicationController
 
   def create
     @stock = Stock.new(stock_params)
-    p @stock.inspect
+    # p @stock.inspect
     @stock.user = current_user
     if @stock.save
       redirect_to @stock

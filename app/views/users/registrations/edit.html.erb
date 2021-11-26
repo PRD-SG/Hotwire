@@ -9,25 +9,25 @@
     <div class="col-md-12 d-flex justify-content-center mt-2">
       <div class="col-md-6">
         <%= f.label :email ,class: "form-label "%><br />
-        <%= f.email_field :email, autofocus: true, autocomplete:"email",class:"form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete:"email",class:"form-control border border-dark" %>
       </div>
     </div>
     <div class="col-md-12 d-flex justify-content-center">
       <div class="col-md-6">
-        <%= f.label :password ,class: "form-label"%> 
-        <%= f.password_field :password, autocomplete:"off",class:"form-control" %>
+        <%= f.label :password ,class: "form-label"%>
+        <%= f.password_field :password, autocomplete:"off",class:"form-control border border-dark" %>
       </div>
     </div>
     <div class="col-md-12 d-flex justify-content-center">
       <div class="col-md-6">
         <%= f.label :password_confirmation ,class: "form-label"%><br />
-        <%= f.password_field :password_confirmation, autocomplete:"new-password",class:"form-control" %>
+        <%= f.password_field :password_confirmation, autocomplete:"new-password",class:"form-control border border-dark" %>
       </div>
     </div>
     <div class="col-md-12 d-flex justify-content-center">
       <div class="col-md-6">
-        <%= f.label :current_password, class: "form-label" %> 
-        <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control"%>
+        <%= f.label :current_password, class: "form-label" %>
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control border border-dark"%>
       </div>
     </div>
   </div>
