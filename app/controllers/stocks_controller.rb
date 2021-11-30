@@ -1,6 +1,7 @@
 class StocksController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
+
   def index
     @q = Stock.ransack(params[:q])
     @stock = @q.result(distinct: true) 
@@ -16,10 +17,12 @@ class StocksController < ApplicationController
 
   def create
     @stock = Stock.new(stock_params)
-    # p @stock.inspect
+
     @stock.user = current_user
     if @stock.save
-      redirect_to @stock
+      redirect_to do |format|
+        format.html { redirect_to @stock }
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,7 +35,9 @@ class StocksController < ApplicationController
   def update
     @stock = Stock.find(params[:id])
     if @stock.update(stock_params)
-      redirect_to @stock
+      redirect_to do |format|
+        format.html { redirect_to @stock }
+      end
     else
       render :edit, status: :unprocessable_entity
     end
@@ -40,6 +45,7 @@ class StocksController < ApplicationController
 
   def destroy
     @stock = Stock.find(params[:id])
+    p @stock
     @stock.destroy
     redirect_to root_path
   end

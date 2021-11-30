@@ -6,5 +6,7 @@ class Stock < ApplicationRecord
   has_one_attached :main_image
   #User
   belongs_to :user
+  broadcasts
+
 
 end

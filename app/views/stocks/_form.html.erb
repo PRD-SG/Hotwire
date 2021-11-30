@@ -1,4 +1,5 @@
 <%= form_with model: stock do |form| %>
+
 <div class="col-md-12 d-flex justify-content-center">
   <div class="col-md-6">
     <%stock.errors.full_messages_for(:qty).each do |message| %>
@@ -32,10 +33,8 @@
       <%= form.submit class: "btn btn-success btn-w" %>
     </div>
   </div>
-  <div class="col-md-12 d-flex justify-content-center mt-2 ">
-    <div class="col-md-4 d-flex justify-content-center btn-w">
-      <%= link_to '<span class="material-icons">arrow_back</span>'.html_safe,root_path ,class: "btn btn-outline-dark  d-flex justify-content-center"%>
-    </div>
-  </div>
-<% end %>
+  
 </div>
+</div>
+
+<% end %>

@@ -1,62 +1,13 @@
-<div class="container">
+<%= turbo_stream_from @stock %> 
+
+<%= turbo_frame_tag 'stock' do%> 
+
+<%= render @stock %> 
+
+<%end%>
+
+<div class="container mt-2">
   <div class="row g-3">
-    <div class="col-md-12 title_page d-flex justify-content-center align-items-center shadow p-3 mb-3 mt-3 rounded">
-      Stocks#Show
-    </div>
-  </div>
-  <div class="row g-3">
-    <div class="col-md-12 d-flex justify-content-center">
-      <div class="col-md-6">
-        <label class="form-label">NAME</label>
-        <div class="form-control"><%= @stock.name %></div>
-      </div>
-    </div>
-    <div class="col-md-12 d-flex justify-content-center">
-      <div class="col-md-6">
-        <label class="form-label">ID</label>
-        <div class="form-control"><%= @stock.id %></div>
-      </div>
-    </div>
-    <div class="col-md-12 d-flex justify-content-center">
-      <div class="col-md-6">
-        <label class="form-label">QTY</label>
-        <div class="form-control"><%= @stock.qty%></div>
-      </div>
-    </div>
-    <div class="col-md-12 d-flex justify-content-center">
-        <div class="col-md-6">
-          <label class="form-label">CREATED</label>
-          <div class="form-control">
-            <%= @stock.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-12 d-flex justify-content-center">
-        <div class="col-md-6">
-          <label class="form-label">UPDATED</label>
-          <div class="form-control">
-            <%= @stock.updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-12 d-flex justify-content-center">
-      <div class="col-md-6">
-        <label class="form-label">CREATE BY</label>
-        <div class="form-control">
-          <%= @stock.user.email %>
-        </div>
-      </div>
-  </div>
-  <% if @stock.main_image.attached? %>
-    <div class="col-md-12 d-flex justify-content-center">
-      <div class="col-md-6">
-        <label class="form-label">IMAGE</label>
-        <div class="form-control d-flex justify-content-center">
-          <%= image_tag(@stock.main_image ,width: "200")%>
-        </div>
-      </div>
-    </div>
-  <%end%>
     <div class="col-md-12 d-flex justify-content-center">
       <%= link_to '<span class="material-icons">arrow_back</span>'.html_safe,root_path ,class: "btn btn-outline-dark btn-sm"%>
     </div>
